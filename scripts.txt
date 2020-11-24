@@ -1,0 +1,8 @@
+Furthermore in order for a manual run of this bat file to actually result in a successful uninstall you must have local admin rights.
+Samanage Agent uninstall commands
+
+"C:\Program Files (x86)\Samanage Agent\uninstall.exe" --mode unattended
+"C:\Program Files\Samanage Agent\uninstall.exe" --mode unattended
+Discovery Agent uninstall commands
+"C:\Program Files (x86)\Solarwinds Discovery Agent\uninstall.exe" --mode unattended
+"C:\Program Files\Solarwinds Discovery Agent\uninstall.exe" --mode unattended
