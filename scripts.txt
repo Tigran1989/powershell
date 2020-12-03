@@ -6,3 +6,4 @@ Samanage Agent uninstall commands
 Discovery Agent uninstall commands
 "C:\Program Files (x86)\Solarwinds Discovery Agent\uninstall.exe" --mode unattended
 "C:\Program Files\Solarwinds Discovery Agent\uninstall.exe" --mode unattended
+"C:\Program Files (x86)\Samanage Agent\uninstall.exe" --mode unattended
