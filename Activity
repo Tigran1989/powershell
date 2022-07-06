@@ -1,0 +1,59 @@
+# This  comment for activity only keyboard and mouse 
+
+Clear-Host
+Echo "Keep-alive with Scroll Lock..."
+
+$WShell = New-Object -com "Wscript.Shell"
+
+
+
+
+
+while ($true){
+  $min = Get-Random -Minimum 0.1 -Maximum 2.1
+  $max = Get-Random -Minimum 2.1 -Maximum 9.2
+  $Files = Get-Random -Minimum $min -Maximum $max
+  $WShell.sendkeys("{SCROLLLOCK}")
+  echo $Files
+
+  function Click-MouseButton
+{
+    $signature=@' 
+      [DllImport("user32.dll",CharSet=CharSet.Auto, CallingConvention=CallingConvention.StdCall)]
+      public static extern void mouse_event(long dwFlags, long dx, long dy, long cButtons, long dwExtraInfo);
+'@ 
+
+    $SendMouseClick = Add-Type -memberDefinition $signature -name "Win32MouseEventNew" -namespace Win32Functions -passThru 
+
+        $SendMouseClick::mouse_event(0x00000002, 0, 0, 0, 0);
+        $SendMouseClick::mouse_event(0x00000004, 0, 0, 0, 0);
+}
+
+  Click-MouseButton
+  Start-Sleep -Milliseconds 10
+  $WShell.sendkeys("{SCROLLLOCK}")
+  Start-Sleep -Seconds $Files
+  echo $Files
+}
+
+
+
+Clear-Host
+Echo "Keep-alive with Scroll Lock..."
+
+$WShell = New-Object -com "Wscript.Shell"
+
+# This  comment for activity only keyboard
+
+while ($true){
+  $min = Get-Random -Minimum 0.1 -Maximum 2.9
+  $max = Get-Random -Minimum 3.1 -Maximum 3.9
+  $Files = Get-Random -Minimum $min -Maximum $max
+  $WShell.sendkeys("{SCROLLLOCK}")
+  echo $Files
+  Start-Sleep -Milliseconds 10
+  $WShell.sendkeys("{SCROLLLOCK}")
+  Start-Sleep -Seconds $Files
+  echo $Files
+}
+
